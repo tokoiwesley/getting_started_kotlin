@@ -6,17 +6,7 @@ interface Signatory {
     fun sign()
 }
 
-open class Person(val name: String, var age: Int) : Signatory {
-
-    init {
-        if (name == "Wesley" && age < 20) throw Exception("Invalid age")
-    }
-
-    var isMarried: Boolean = false;
-
-    constructor(name: String, age: Int, isMarried: Boolean) : this(name, age) {
-        this.isMarried = isMarried
-    }
+open class Person(val name: String, var age: Int, var isMarried: Boolean = false) : Signatory {
 
     override fun sign() = println("$name aged $age can sign documents (and their marital status is $isMarried)")
 
