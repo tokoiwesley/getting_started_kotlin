@@ -41,6 +41,9 @@ fun main(args: Array<String>) {
 
     val wesley = User("Wesley", 1)
     println(wesley)
+
     val (name, id) = wesley
     println("User is $name and their id is $id")
+    val otherUser = wesley.copy(id = 2)
+    println(otherUser)
 }
