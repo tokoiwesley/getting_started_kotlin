@@ -8,6 +8,8 @@ interface Signatory {
 
 open class Person(val name: String, var age: Int, var isMarried: Boolean = false) : Signatory {
 
+    var partnerName: String = ""
+
     override fun sign() = println("$name aged $age can sign documents (and their marital status is $isMarried)")
 
     companion object {
@@ -18,6 +20,9 @@ open class Person(val name: String, var age: Int, var isMarried: Boolean = false
 
             p.age = 31
             p.sign()
+
+            p.partnerName = "Eva"
+            println("Partner name is ${p.partnerName}")
         }
     }
 
