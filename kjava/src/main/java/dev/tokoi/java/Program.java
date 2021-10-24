@@ -1,6 +1,7 @@
 package dev.tokoi.java;
 
 import dev.tokoi.kotlin.Meeting;
+import dev.tokoi.kotlin.MeetingException;
 
 public class Program {
     public static void main(String[] args) {
@@ -15,5 +16,11 @@ public class Program {
         int version = Meeting.APP_VERSION;
 
         Meeting.getAppVersion();
+
+        try {
+            board.addAttendee("");
+        } catch (MeetingException e) {
+            e.printStackTrace();
+        }
     }
 }
