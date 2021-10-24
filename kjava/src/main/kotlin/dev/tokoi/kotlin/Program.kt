@@ -1,6 +1,7 @@
 package dev.tokoi.kotlin
 
 import dev.tokoi.java.Person
+import java.lang.Exception
 
 class Program {
     companion object {
@@ -12,6 +13,12 @@ class Program {
             p.age = 31
 
             println("${p.name} is ${p.age} years old")
+
+            try {
+                p.name = ""
+            } catch (e: Exception) {
+                println(e.message)
+            }
         }
     }
 }

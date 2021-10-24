@@ -10,6 +10,7 @@ public class Person {
     }
 
     public void setName(String name) {
+        if (name == null || name.equals("")) throw new IllegalArgumentException("name");
         this.name = name;
     }
 
