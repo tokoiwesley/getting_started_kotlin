@@ -14,6 +14,18 @@ class Providers {
         return listOfProviders
     }
 
+    fun getAllProvidersEx(filter: String): List<ProviderDetails> {
+        val providers = Security.getProviders()
+
+        return providers.flatMap { provider ->
+            provider.entries.filter { it ->
+                it.key.toString().contains(filter, true)
+            }.map { ProviderDetails(provider.name, it.key.toString()) }
+        }
+
+        // return listOfProviders
+    }
+
     fun getAllProviders(filter: String): List<ProviderDetails> {
         val providers = Security.getProviders()
         val listOfProviders = mutableListOf<ProviderDetails>()
