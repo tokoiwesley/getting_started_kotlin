@@ -19,6 +19,14 @@ class Program {
             } catch (e: Exception) {
                 println(e.message)
             }
+
+            val partner = p.partner
+
+            println(partner?.name)
         }
     }
+}
+
+class Student : Person() {
+
 }

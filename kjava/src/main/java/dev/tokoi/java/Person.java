@@ -1,5 +1,7 @@
 package dev.tokoi.java;
 
+import org.jetbrains.annotations.Nullable;
+
 public class Person {
     private String name;
     private int age;
@@ -22,6 +24,7 @@ public class Person {
         this.age = age;
     }
 
+    @Nullable
     public Person getPartner() {
         return partner;
     }
