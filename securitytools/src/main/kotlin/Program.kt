@@ -2,7 +2,7 @@ import dev.tokoi.Providers
 
 fun main(args: Array<String>) {
     val providers = Providers()
-    val details = providers.getAllProviders();
+    val details = providers.getAllProviders("Random");
 
     details.forEach(::println)
 
