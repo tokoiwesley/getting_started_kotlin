@@ -9,5 +9,11 @@ public class Program {
         board.setLocation("Nairobi");
 
         System.out.println("The meeting is in " + board.getLocation());
+
+        board.description = "A board meeting";
+
+        int version = Meeting.APP_VERSION;
+
+        Meeting.getAppVersion();
     }
 }
