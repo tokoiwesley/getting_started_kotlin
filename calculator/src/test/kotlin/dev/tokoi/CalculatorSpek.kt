@@ -1,6 +1,8 @@
 package dev.tokoi
 
 import org.junit.jupiter.api.Assertions
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.verify
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
@@ -30,6 +32,15 @@ class CalculatorSpek : Spek({
             calculator?.accumulate(3)
 
             Assertions.assertEquals(5, calculator?.total)
+        }
+    }
+
+    describe("the output should be written correctly") {
+        val result: Result = mock(Result::class.java)
+        val calculator = Calculator(result)
+        it("should write the output amount") {
+            calculator.accumulate(23)
+            verify(result).write(23)
         }
     }
 })

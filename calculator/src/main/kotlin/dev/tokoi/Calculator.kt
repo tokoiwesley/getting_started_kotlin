@@ -1,6 +1,6 @@
 package dev.tokoi
 
-class Calculator(output: Result) {
+class Calculator(val output: Result) {
     var total = 0
     fun add(x: Int, y: Int): Int {
         return x + y;
@@ -8,6 +8,7 @@ class Calculator(output: Result) {
 
     fun accumulate(x: Int) {
         total += x
+        output.write(total)
     }
 }
 
